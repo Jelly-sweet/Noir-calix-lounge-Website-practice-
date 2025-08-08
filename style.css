@@ -111,7 +111,7 @@ header {
     border-radius: var(--border-radius);
 }
 
-.navbar :where(#menu-close-button, #menu-open-button){
+.navbar :where(#menu-close-button, #menu-open-button, #icon-credits){
     display: none;
 }
 /* hero section styling */
@@ -645,6 +645,23 @@ footer .social-icon .fa-facebook:hover,
         z-index: 1000;
     }
 
+    #icon-credits {
+        font-weight: var(--font-weight-semibold);
+        color: var(--white-color);
+        display: block;
+        margin-top: 17px;
+        font-size: var(--font-size-n);
+        text-align: center;
+        padding: 20px;
+        text-align: justify;
+        }
+
+    #icon-credits a {
+        display: block; /* ブロック表示で自動的に改行 */
+        margin-bottom: 8px; /* 下に余白 */
+        color: var(--white-color);
+        text-decoration: none;
+    }
     /* hero画像を後ろに下げる */
     .hero-section {
         z-index: 0;
@@ -744,5 +761,8 @@ footer .social-icon .fa-facebook:hover,
 
     footer .header-logo .copyright {
         font-size: var(--font-size-s);
+    }
+    .icon-credits {
+        display: none;
     }
 }
