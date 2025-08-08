@@ -1,0 +1,748 @@
+/* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Libertinus', serif;
+}
+
+:root{
+    /* color */
+    --white-color:#E1E6EB;
+    --dark-color:#333E46;
+    --primary-color: rgba(125, 154, 174, 0.2);
+    --light-blue-color:#7D9AAE;
+    --secondary-color:#CDCD00;
+
+    /* font size */
+    --font-size-s:0.8rem;
+    --font-size-n:1rem;
+    --font-size-m:1.3rem;
+    --font-size-l:2.5rem;
+    --font-size-xl:3rem;
+    --font-size-xxl:5rem;
+    --font-size-xxxl:10rem;
+
+    /* font weight */
+    --font-weight-ligth:300;
+    --font-weight-normal:400;
+    --font-weight-medium:500;
+    
+    /* border radius */
+    --border-radius:25px;
+}
+
+html{
+    scroll-behavior: smooth; /*これでnavのリンククリックしたらスクロールしてくれる*/
+}
+body,html {
+    background-color: var(--dark-color);
+    overflow-x: hidden;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+a{
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 0.5em;
+  border-radius: 4px;
+  color: #000;
+}
+
+/* header styling */
+header {
+    padding: 7px;
+    width: 100%;
+    height: auto;
+    background-color: var(--primary-color);
+  
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .nav-logo img{
+    width: 120px;
+    height: auto;
+    border: 1px solid var(--secondary-color);
+    padding: 0 10px;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.navbar .nav-menu .nav-link {
+    padding: 10px 18px;
+    color: var(--white-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius);
+    transition: 0.3s ease; /*nav-menuが右から横にスライドしてくる*/
+}
+
+.navbar .nav-menu .nav-link:hover {
+    color: var(--dark-color);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+}
+
+.navbar :where(#menu-close-button, #menu-open-button){
+    display: none;
+}
+/* hero section styling */
+
+.hero-section {
+    color: var(--white-color);
+    position: relative;
+}
+
+.hero-section .hero-img .hero-img-detail {
+    width: 100%;
+    max-height: 900px;
+    object-fit: cover;
+    display: block;
+}
+.hero-section .hero-details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.hero-section .hero-details .subtitle {
+    font-size: var(--font-size-l);
+    margin: 0 0 40px 0;
+}
+
+.hero-section .hero-details .title {
+    font-family: 'Italianno',serif;
+    font-size: var(--font-size-xxxl);
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+/* consept styling */
+.concept-section {
+    color: var(--white-color);
+    padding: 80px 0px;
+    margin: 50px 0;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: auto;
+}
+
+.concept-section .concept-contents {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.concept-section .concept-contents .lounge-title {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+
+.concept-section .concept-contents .lounge-title .title {
+    font-family: 'Italianno', serif;
+    font-size: var(--font-size-xl);
+   
+}
+
+.concept-section .concept-contents .lounge-title .subtitle {
+    font-size: var(--font-size-s);
+}
+
+.concept-section .concept-contents .concept-theme {
+    font-size: var(--font-size-n);
+    padding-top: 15px;
+    padding-left: 50px;
+}
+
+.concept-section .concept-explain {
+    justify-content: center;
+    padding-top: 50px;
+}
+.concept-section .concept-explain p {
+    text-align: center;
+    font-size: var(--font-size-n);
+    line-height: 35px;
+}
+
+
+/* menu styling */
+.Menu-section {
+    background-color: var(--primary-color);
+    padding: 100px 0;
+}
+.Menu-section .section-content .menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.Menu-section .section-content .menu-list .menu-item {
+    color: var(--dark-color);
+    background-color: white;
+    padding-bottom: 30px;
+    width: 24%;    
+    display: flex;
+    flex-direction: column;
+}
+
+.Menu-section .section-content .menu-list .menu-item .menu-text-wrap {
+  flex-grow: 1;
+}
+
+.Menu-section .section-content .menu-list .name {
+    font-size: var(--font-size-l);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.Menu-section .section-content .menu-list .text {
+    padding: 0 50px 20px;
+    font-size: var(--font-size-n);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5rem;
+}
+
+.Menu-section .section-content .menu-list .menu-btn {
+    display: block;
+    width: fit-content;
+    text-align: center;
+    margin:0 auto;
+    padding: 10px 50px;
+    color: var(--white-color);
+    border-radius: var(--border-radius);
+    background-color: var(--light-blue-color);
+    font-size: var(--font-size-n);
+    transition: 0.3s ease;
+}
+
+.Menu-section .section-content .menu-list .menu-btn:hover {
+    color: var(--dark-color);
+    background-color: var(--secondary-color);
+}
+
+.menu-img-bg {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center top; /* ←ここで見せたい位置を調整 */
+  background-repeat: no-repeat;
+  margin-bottom: 70px;
+}
+
+/* 各メニュー用の画像を個別に指定 */
+.menu-img-bg.dishes {
+  background-image: url('/img/dishes-img.jpg');
+}
+
+.menu-img-bg.tea {
+  background-image: url('/img/tea-img.jpg');
+}
+
+.menu-img-bg.alcohol {
+  background-image: url('/img/alcohol-img.jpg');
+}
+
+.menu-img-bg.dessert {
+  background-image: url('/img/dessert-img.jpg');
+}
+
+
+
+
+/* reservation section styling */
+.reservation-section {
+    color: var(--white-color);
+    margin: 0;
+    padding: 20px 30px;
+}
+
+.reservation-section .section-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.reservation-section .section-wrapper .reservation,
+.reservation-section .section-wrapper .information {
+    width: 50%;            /* ここは50%固定 */
+    margin: 0;             /* 自動マージン外す */
+    text-align: left;      /* 中のテキスト左寄せ */
+}
+
+/* reservation 側のスタイルはそのまま */
+.reservation-section .section-wrapper .reservation {
+  max-width: 700px;    /* 幅を限定 */
+  margin: 0 auto;      /* 親内中央寄せ */
+  text-align: left;    /* 中身は左寄せ */
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.reservation-section .reservation .reservation-title {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+}
+
+.reservation-section .reservation .reservation-title .title {
+    font-size: var(--font-size-l);
+}
+
+.reservation-section .reservation .reservation-title .subtitle {
+    white-space: nowrap;
+}
+.reservation-section .reservation .reservation-form .form-input {
+    margin-bottom: 20px;
+    width: 100%;       /* 親の幅いっぱいに広げる */
+    max-width: 500px;  /* 最大幅は500px（お好みで調整可） */
+}
+
+.reservation-section .reservation-form label {
+    margin-bottom: 5px;
+    font-size: var(--font-size-n);
+}
+
+.reservation-form label,
+.reservation-form .form-input {
+  text-align: left; /* ラベルと入力欄は左寄せ */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+
+.reservation-form button {
+    display: block;
+    margin: 40px auto 0; /* 上40px、左右auto（中央寄せ）、下0 */
+    padding: 10px 50px;
+    color: var(--white-color);
+    border-radius: var(--border-radius);
+    background-color: var(--light-blue-color);
+    font-size: var(--font-size-n);
+    transition: 0.3s ease;
+    text-align: center; /* 念のため */
+}
+.reservation-form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+/* information 側の調整 */
+.information {
+    padding-top: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央寄せ */
+}
+
+.information .info-details {
+    width: 100%;
+    max-width: 600px; /* 地図の横幅に合わせる */
+    margin: 0 auto;
+}
+
+.information .info-details .info-detail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 常に2列 */
+    gap: 20px 40px; /* 上下20px、左右40px */
+    justify-content: center;
+}
+
+.information .info-details .info-detail .info-list {
+    aspect-ratio: 4 / 3; /* 横4 縦3 */
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.information .info-details .info-detail .info-list:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.information .info-details .info-detail .info-img {
+    width: 60px;
+    height: auto;
+    padding-bottom: 12px;
+}
+
+.information .info-details .info-detail .text {
+    font-size: 12px;
+    line-height: 1.2;
+    word-break: break-word;
+    max-height: 3.6em; /* 3行まで */
+    overflow: hidden;
+}
+
+.info-map .map {
+    width: 100%;     
+    height: 350px;   
+    max-width: 600px; 
+    border: 0;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+
+/* footer styling */
+footer {
+    display: flex;
+    flex-wrap: nowrap;
+    color: var(--white-color);
+    justify-content: space-around;
+    background-color: var(--primary-color);
+    padding: 20px 0;
+}
+
+footer .social-icon {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+
+footer .social-icon i {
+    transition: transform 0.3s ease-in-out;
+}
+
+footer .footer-logo img {
+    width: 120px;
+    height: auto;
+    border: 1px solid var(--secondary-color);
+    margin-left: 20px;
+    margin-top: 5px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+footer .header-logo .copyright {
+    font-size: var(--font-size-s);
+}
+
+.navbar .nav-list .nav-item {
+    line-height: 25px;
+}
+
+.navbar .nav-list .nav-item a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+footer .social-icon .fa-x-twitter:hover,
+footer .social-icon .fa-instagram:hover,
+footer .social-icon .fa-facebook:hover,
+.navbar .nav-list .nav-item a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+/* responsib max-width:780px */
+@media screen and (max-width: 800px) {
+
+    body {
+        --font-size-l:2rem;
+        --font-size-xxl:7rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header-contents {
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-contents .header-logo {
+        margin-bottom: 20px;
+    }
+    .header-contents .navbar {
+        margin: 0;
+    }
+
+    .header-contents .navbar .nav-list {
+        gap: 30px;
+    }
+    .header-contents .navbar .nav-list .nav-item a {
+        font-size: var(--font-size-m);
+    }
+
+    .hero-section .hero-details .subtitle {
+        font-size: var(--font-size-l);
+    }
+
+    .hero-section .hero-details .title {
+        font-size: var(--font-size-xxl);
+        white-space: nowrap;
+    }
+
+  .concept-section .concept-contents {
+        display: block;
+    }
+
+    .concept-section .concept-contents .concept-theme {
+        padding: 0;
+    }
+
+    .concept-section .concept-contents .lounge-title ,
+    .concept-section .concept-contents .concept-theme {
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    br {
+        display: none;
+    }
+    .concept-section .concept-explain p{
+        text-align: justify;
+        padding: 30px;
+    }
+   
+    .Menu-section .section-content .menu-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .Menu-section .section-content .menu-list .menu-item {
+        width: calc(50% - 30px); /* 2列に分ける（間にgap） */
+        max-width: 400px;
+    }
+    .Menu-section .section-content .menu-list .name {
+        font-size: var(--font-size-m);
+        padding-bottom: 20px;
+    }
+    .menu-img-bg {
+        margin-bottom: 20px;
+    }
+
+    .Menu-section .section-content .menu-list .name {
+        font-size: var(--font-size-l);
+        font-weight: var(--font-weight-medium);
+        text-align: center;
+        padding: 0 0 10px;
+    }
+    .Menu-section .section-content .menu-list .text {
+        padding: 20px;
+        font-size: var(--font-size-s);
+        font-weight: var(--font-weight-normal);
+        line-height: 1.5rem;
+    }
+
+    .information .info-details .info-detail .info-list {
+        width: 180px;
+    }
+
+    .information .info-details .info-detail .text {
+        font-size: var(--font-size-s);
+        line-height: 1.2;
+      }
+}
+
+/* responsib max-width:500px */
+@media screen and (max-width:500px) {
+
+    :root {
+        --font-size-s:0.5rem;
+    }
+        body.show-mobile-menu header::before{
+        content: "";/*::beforeは疑似要素だからcontentで空白でも””をいれないとだめ*/
+        position: fixed;/*スクロールしてもその場に固定される位置指定*/
+        z-index: 999;
+        left: 0;
+        top: 0;/*左上を起点に　↓↓h100% w100%でそれが画面全体に広がる*/
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);/*背景コンテンツを５ｐｘ分ぼかす*/
+        background: rgba(0,0, 0, 0.2);/*背景をほんのり暗くして透明度２０％（0.2）にしてる*/
+    }
+
+    .navbar .nav-menu{
+        display: block;
+        position: fixed;
+        left: -300px;/*これでスマホサイズ時の白背景のメニュー欄が左にめっちゃ移動して見えなくなってる（隠れてる状態）*/
+        top: 0;
+        width: 300px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;/*display:flexとセット　子要素が上から下に立て並びになる　スマホビューのレイアウトとか見出し＋ボタン＋画像みたいな「縦に並べたUI」*/
+        align-items: center;
+        padding-top: 100px;
+        background-color: var(--primary-color);
+        transition: left 0.2s ease;/*ease= 入りと終わりが早く中間がゆっくり　の動き　ほかにもtransition-timing-functionの種類あるから調べてみて*/
+    }  
+
+    body.show-mobile-menu .navbar .nav-menu{
+        left: 0;
+    }
+
+    .navbar :where(#menu-close-button, #menu-open-button){
+        display: block;
+        font-size: var(--font-size-l);
+    }
+
+
+    .navbar #menu-close-button{
+
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        color: var(--white-color);
+    }
+
+    .navbar #menu-open-button{
+        color: var(--white-color);
+    }
+
+    .navbar .nav-menu .nav-link{
+        font-weight: var(--font-weight-semibold);
+        color: var(--white-color);
+        display: block;
+        margin-top: 17px;
+        font-size: var(--font-size-m);
+    }
+    .navbar .nav-menu {
+        z-index: 1000;
+    }
+
+    /* hero画像を後ろに下げる */
+    .hero-section {
+        z-index: 0;
+    }
+    .hero-section .hero-details .subtitle {
+        font-size: var(--font-size-m);
+    }
+
+    .hero-section .hero-details .title {
+        font-size: var(--font-size-xl);
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .concept-section .concept-contents {
+        display: block;
+    }
+
+    .concept-section .concept-contents .concept-theme {
+        padding: 0;
+    }
+
+    .concept-section .concept-explain p {
+        text-align: justify;
+        font-size: var(--font-size-n);
+        line-height: 35px;
+    }
+
+
+
+    .Menu-section .section-content .menu-list {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .Menu-section .section-content .menu-list .menu-item {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: white;
+    }
+
+    .menu-img-bg {
+        width: 50%;
+        height: auto;
+        aspect-ratio: auto;
+        margin-bottom: 0;
+    }
+
+    .menu-text-container {
+        width: 50%;
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu-text-container .name {
+        padding-bottom: 10px;
+        text-align: left;
+    }
+
+    .menu-text-container .menu-text-wrap {
+        flex-grow: 1;
+    }
+
+    .menu-text-container .text {
+        padding: 0;
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
+
+    .menu-text-container .menu-btn {
+        align-self: flex-start;
+        margin-top: 15px;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .reservation-section .section-wrapper .reservation,
+    .reservation-section .section-wrapper .information {
+        width: 100%;
+        height: auto;    /* 中のテキスト左寄せ */
+    }
+ 
+    .reservation-section .section-wrapper {
+        display: block;
+        gap: 50px;
+    }
+
+    .reservation-section .section-wrapper .reservation {
+        max-width: 1000px;  
+        text-align: left;    /* 中身は左寄せ */
+    }
+
+    footer .header-logo .copyright {
+        font-size: var(--font-size-s);
+    }
+}
