@@ -21,10 +21,11 @@
     --font-size-s:0.8rem;
     --font-size-n:1rem;
     --font-size-m:1.3rem;
-    --font-size-l:2.5rem;
-    --font-size-xl:3rem;
-    --font-size-xxl:5rem;
-    --font-size-xxxl:10rem;
+    --font-size-l:2rem;
+    --font-size-xl:2.5rem;
+    --font-size-xxl:3rem;
+    --font-size-xxxl:5rem;
+    --font-size-xxxxl:10rem;
 
     /* font weight */
     --font-weight-ligth:300;
@@ -36,8 +37,9 @@
 }
 
 html{
-    scroll-behavior: smooth; /*これでnavのリンククリックしたらスクロールしてくれる*/
+    scroll-behavior: smooth;
 }
+
 body,html {
     background-color: var(--dark-color);
     overflow-x: hidden;
@@ -72,12 +74,22 @@ textarea {
   color: #000;
 }
 
+
+#Concept,
+#Menu {
+    min-height: 100vh;
+}
+
 /* header styling */
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
     padding: 7px;
     width: 100%;
     height: auto;
     background-color: var(--primary-color);
+    z-index: 1000;
   
 }
 .navbar {
@@ -102,7 +114,7 @@ header {
     color: var(--white-color);
     font-size: var(--font-size-m);
     border-radius: var(--border-radius);
-    transition: 0.3s ease; /*nav-menuが右から横にスライドしてくる*/
+    transition: 0.3s ease; 
 }
 
 .navbar .nav-menu .nav-link:hover {
@@ -114,6 +126,20 @@ header {
 .navbar :where(#menu-close-button, #menu-open-button, #icon-credits){
     display: none;
 }
+
+/* fadeup styling */
+
+.fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.8s ease, transform 1.8s ease;
+}
+
+.fadeUp.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* hero section styling */
 
 .hero-section {
@@ -123,7 +149,7 @@ header {
 
 .hero-section .hero-img .hero-img-detail {
     width: 100%;
-    max-height: 900px;
+    max-height: 990px;
     object-fit: cover;
     display: block;
 }
@@ -135,13 +161,13 @@ header {
     text-align: center;
 }
 .hero-section .hero-details .subtitle {
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-xl);
     margin: 0 0 40px 0;
 }
 
 .hero-section .hero-details .title {
     font-family: 'Italianno',serif;
-    font-size: var(--font-size-xxxl);
+    font-size: var(--font-size-xxxxl);
     margin: 0;
     white-space: nowrap;
 }
@@ -151,134 +177,113 @@ header {
 .concept-section {
     color: var(--white-color);
     padding: 80px 0px;
-    margin: 50px 0;
-    background-color: var(--primary-color);
+    margin: 50px auto;
+    background-color: rgb(138, 114, 118);
     width: 100%;
-    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .concept-section .concept-contents {
-    display: flex;
     justify-content: center;
-    max-width: 1000px;
     margin: 0 auto;
     gap: 40px;
 }
 
-.concept-section .concept-contents .lounge-title {
-    margin-bottom: 40px;
-    text-align: left;
-}
 
-
-.concept-section .concept-contents .lounge-title .title {
+.concept-section .concept-contents .title {
     font-family: 'Italianno', serif;
-    font-size: var(--font-size-xl);
-   
+    font-size: var(--font-size-xxxl); 
 }
 
-.concept-section .concept-contents .lounge-title .subtitle {
-    font-size: var(--font-size-s);
-}
-
-.concept-section .concept-contents .concept-theme {
+.concept-section .concept-contents .subtitle {
     font-size: var(--font-size-n);
-    padding-top: 15px;
-    padding-left: 50px;
+    text-align: center;
+}
+
+
+.concept-section .concept-explain .concept-theme {
+    font-size: var(--font-size-m);
+    display: flex;
+    align-items: center;
 }
 
 .concept-section .concept-explain {
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 100px;
+    margin: 50px;
+    min-width: 40%;
+    max-width: 70%;
 }
 .concept-section .concept-explain p {
-    text-align: center;
-    font-size: var(--font-size-n);
-    line-height: 35px;
+    text-align: left;
+    font-size: var(--font-size-m);
+    padding-top: 20px;
+    line-height: 45px;
 }
 
 
 /* menu styling */
+
 .Menu-section {
-    background-color: var(--primary-color);
-    padding: 100px 0;
-}
-.Menu-section .section-content .menu-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 5%;
+    padding: 0 50px;
+    margin-bottom: 50px;
 }
 
-.Menu-section .section-content .menu-list .menu-item {
-    color: var(--dark-color);
-    background-color: white;
-    padding-bottom: 30px;
-    width: 24%;    
-    display: flex;
-    flex-direction: column;
-}
-
-.Menu-section .section-content .menu-list .menu-item .menu-text-wrap {
-  flex-grow: 1;
-}
-
-.Menu-section .section-content .menu-list .name {
-    font-size: var(--font-size-l);
-    font-weight: var(--font-weight-medium);
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.Menu-section .section-content .menu-list .text {
-    padding: 0 50px 20px;
-    font-size: var(--font-size-n);
-    font-weight: var(--font-weight-normal);
-    line-height: 1.5rem;
-}
-
-.Menu-section .section-content .menu-list .menu-btn {
-    display: block;
-    width: fit-content;
-    text-align: center;
-    margin:0 auto;
-    padding: 10px 50px;
-    color: var(--white-color);
-    border-radius: var(--border-radius);
-    background-color: var(--light-blue-color);
-    font-size: var(--font-size-n);
-    transition: 0.3s ease;
-}
-
-.Menu-section .section-content .menu-list .menu-btn:hover {
-    color: var(--dark-color);
-    background-color: var(--secondary-color);
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
 }
 
 .menu-img-bg {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  background-size: cover;
-  background-position: center top; /* ←ここで見せたい位置を調整 */
-  background-repeat: no-repeat;
-  margin-bottom: 70px;
+  max-width: 400px; 
+  min-width: 200px;
+  aspect-ratio: 1 / 1; 
+  overflow: hidden;
 }
 
-/* 各メニュー用の画像を個別に指定 */
-.menu-img-bg.dishes {
-  background-image: url('/img/dishes-img.jpg');
+.menu-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.menu-img-bg.tea {
-  background-image: url('/img/tea-img.jpg');
+.menu-text-container {
+  background: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  max-width: 400px;
 }
 
-.menu-img-bg.alcohol {
-  background-image: url('/img/alcohol-img.jpg');
+.menu-text-container .name {
+    font-size: var(--font-size-l);
+    text-align: center;
+    padding: 20px 0;
 }
 
-.menu-img-bg.dessert {
-  background-image: url('/img/dessert-img.jpg');
+.menu-text-wrap {
+    margin: 0 40px;
+    padding-top: 10px;
+    font-size: var(--font-size-m);
+    line-height: 30px;
+}
+.menu-btn {
+  display: inline-block; 
+  margin: 40px auto 20px;
+  text-align: center;
+  color: var(--white-color);
+  padding: 15px 50px;
+  border-radius: 50px;
+  background: var(--light-blue-color);
 }
 
 
@@ -299,16 +304,16 @@ header {
 
 .reservation-section .section-wrapper .reservation,
 .reservation-section .section-wrapper .information {
-    width: 50%;            /* ここは50%固定 */
-    margin: 0;             /* 自動マージン外す */
-    text-align: left;      /* 中のテキスト左寄せ */
+    width: 50%;            
+    margin: 0;             
+    text-align: left;      
 }
 
-/* reservation 側のスタイルはそのまま */
+/* reservation section styling */
 .reservation-section .section-wrapper .reservation {
-  max-width: 700px;    /* 幅を限定 */
-  margin: 0 auto;      /* 親内中央寄せ */
-  text-align: left;    /* 中身は左寄せ */
+  max-width: 700px;    
+  margin: 0 auto;      
+  text-align: left;    
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -330,8 +335,8 @@ header {
 }
 .reservation-section .reservation .reservation-form .form-input {
     margin-bottom: 20px;
-    width: 100%;       /* 親の幅いっぱいに広げる */
-    max-width: 500px;  /* 最大幅は500px（お好みで調整可） */
+    width: 100%;       
+    max-width: 500px; 
 }
 
 .reservation-section .reservation-form label {
@@ -341,7 +346,7 @@ header {
 
 .reservation-form label,
 .reservation-form .form-input {
-  text-align: left; /* ラベルと入力欄は左寄せ */
+  text-align: left; 
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -350,43 +355,44 @@ header {
 
 .reservation-form button {
     display: block;
-    margin: 40px auto 0; /* 上40px、左右auto（中央寄せ）、下0 */
+    margin: 40px auto 0; 
     padding: 10px 50px;
     color: var(--white-color);
     border-radius: var(--border-radius);
     background-color: var(--light-blue-color);
     font-size: var(--font-size-n);
     transition: 0.3s ease;
-    text-align: center; /* 念のため */
+    text-align: center;
 }
+
 .reservation-form button:hover {
     background-color: var(--secondary-color);
     color: var(--dark-color);
 }
 
-/* information 側の調整 */
+/* information styling */
 .information {
-    padding-top: 65px;
+    
     display: flex;
     flex-direction: column;
-    align-items: center; /* 中央寄せ */
+    align-items: center; 
 }
 
 .information .info-details {
     width: 100%;
-    max-width: 600px; /* 地図の横幅に合わせる */
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .information .info-details .info-detail {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 常に2列 */
-    gap: 20px 40px; /* 上下20px、左右40px */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px 40px; 
     justify-content: center;
 }
 
 .information .info-details .info-detail .info-list {
-    aspect-ratio: 4 / 3; /* 横4 縦3 */
+    aspect-ratio: 4 / 3;
     background-color: rgba(0, 0, 0, 0.3);
     text-align: center;
     display: flex;
@@ -414,7 +420,7 @@ header {
     font-size: 12px;
     line-height: 1.2;
     word-break: break-word;
-    max-height: 3.6em; /* 3行まで */
+    max-height: 3.6em; 
     overflow: hidden;
 }
 
@@ -479,12 +485,15 @@ footer .social-icon .fa-facebook:hover,
     transform: scale(1.2);
 }
 
-/* responsib max-width:780px */
-@media screen and (max-width: 800px) {
+/* responsib max-width:1024px */
+@media screen and (max-width: 1024px) {
 
-    body {
+    :root {
         --font-size-l:2rem;
-        --font-size-xxl:7rem;
+        --font-size-xl:5rem;
+        --font-size-xxl:8rem;
+    }
+    body {
         margin: 0;
         padding: 0;
     }
@@ -516,57 +525,31 @@ footer .social-icon .fa-facebook:hover,
         white-space: nowrap;
     }
 
-  .concept-section .concept-contents {
+    .concept-section .concept-contents {
         display: block;
     }
 
-    .concept-section .concept-contents .concept-theme {
-        padding: 0;
+    .concept-section .concept-contents .title {
+        font-size: var(--font-size-xl); 
     }
 
-    .concept-section .concept-contents .lounge-title ,
-    .concept-section .concept-contents .concept-theme {
-        white-space: nowrap;
-        text-align: center;
-    }
 
-    br {
-        display: none;
+    .concept-section .concept-explain {
+        width: 80%;
     }
     .concept-section .concept-explain p{
         text-align: justify;
         padding: 30px;
     }
-   
-    .Menu-section .section-content .menu-list {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
+
+    .menu-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
     }
 
-    .Menu-section .section-content .menu-list .menu-item {
-        width: calc(50% - 30px); /* 2列に分ける（間にgap） */
-        max-width: 400px;
-    }
-    .Menu-section .section-content .menu-list .name {
-        font-size: var(--font-size-m);
-        padding-bottom: 20px;
-    }
-    .menu-img-bg {
-        margin-bottom: 20px;
-    }
-
-    .Menu-section .section-content .menu-list .name {
-        font-size: var(--font-size-l);
-        font-weight: var(--font-weight-medium);
-        text-align: center;
-        padding: 0 0 10px;
-    }
-    .Menu-section .section-content .menu-list .text {
-        padding: 20px;
-        font-size: var(--font-size-s);
-        font-weight: var(--font-weight-normal);
-        line-height: 1.5rem;
+    .menu-text-wrap {
+        font-size: var(--font-size-n);
     }
 
     .information .info-details .info-detail .info-list {
@@ -580,36 +563,36 @@ footer .social-icon .fa-facebook:hover,
 }
 
 /* responsib max-width:500px */
-@media screen and (max-width:500px) {
+@media screen and (max-width:670px) {
 
     :root {
         --font-size-s:0.5rem;
     }
         body.show-mobile-menu header::before{
-        content: "";/*::beforeは疑似要素だからcontentで空白でも””をいれないとだめ*/
-        position: fixed;/*スクロールしてもその場に固定される位置指定*/
+        content: "";
+        position: fixed;
         z-index: 999;
         left: 0;
-        top: 0;/*左上を起点に　↓↓h100% w100%でそれが画面全体に広がる*/
+        top: 0;
         height: 100%;
         width: 100%;
-        backdrop-filter: blur(5px);/*背景コンテンツを５ｐｘ分ぼかす*/
-        background: rgba(0,0, 0, 0.2);/*背景をほんのり暗くして透明度２０％（0.2）にしてる*/
+        backdrop-filter: blur(5px);
+        background: rgba(0,0, 0, 0.2);
     }
 
     .navbar .nav-menu{
         display: block;
         position: fixed;
-        left: -300px;/*これでスマホサイズ時の白背景のメニュー欄が左にめっちゃ移動して見えなくなってる（隠れてる状態）*/
+        left: -300px;
         top: 0;
         width: 300px;
         height: 100%;
         display: flex;
-        flex-direction: column;/*display:flexとセット　子要素が上から下に立て並びになる　スマホビューのレイアウトとか見出し＋ボタン＋画像みたいな「縦に並べたUI」*/
+        flex-direction: column;
         align-items: center;
         padding-top: 100px;
         background-color: var(--primary-color);
-        transition: left 0.2s ease;/*ease= 入りと終わりが早く中間がゆっくり　の動き　ほかにもtransition-timing-functionの種類あるから調べてみて*/
+        transition: left 0.2s ease;
     }  
 
     body.show-mobile-menu .navbar .nav-menu{
@@ -623,7 +606,6 @@ footer .social-icon .fa-facebook:hover,
 
 
     .navbar #menu-close-button{
-
         position: absolute;
         right: 30px;
         top: 30px;
@@ -657,12 +639,13 @@ footer .social-icon .fa-facebook:hover,
         }
 
     #icon-credits a {
-        display: block; /* ブロック表示で自動的に改行 */
-        margin-bottom: 8px; /* 下に余白 */
+        display: block; 
+        margin-bottom: 8px; 
         color: var(--white-color);
         text-decoration: none;
     }
-    /* hero画像を後ろに下げる */
+
+
     .hero-section {
         z-index: 0;
     }
@@ -675,78 +658,34 @@ footer .social-icon .fa-facebook:hover,
         margin: 0;
         white-space: nowrap;
     }
-
-    .concept-section .concept-contents {
-        display: block;
+    .concept-section .concept-contents .title {
+        font-size: var(--font-size-xl);
+    
     }
 
-    .concept-section .concept-contents .concept-theme {
+    .concept-section .concept-explain {
         padding: 0;
+        width: 100%;
     }
-
+    .concept-section .concept-explain .concept-theme {
+        font-size: var(--font-size-n);
+        
+    }
     .concept-section .concept-explain p {
         text-align: justify;
         font-size: var(--font-size-n);
         line-height: 35px;
+        padding-top: 20px;
     }
 
-
-
-    .Menu-section .section-content .menu-list {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .Menu-section .section-content .menu-list .menu-item {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        padding: 0;
-        box-sizing: border-box;
-        background-color: white;
-    }
-
-    .menu-img-bg {
-        width: 50%;
-        height: auto;
-        aspect-ratio: auto;
-        margin-bottom: 0;
-    }
-
-    .menu-text-container {
-        width: 50%;
-        padding: 0 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .menu-text-container .name {
-        padding-bottom: 10px;
-        text-align: left;
-    }
-
-    .menu-text-container .menu-text-wrap {
-        flex-grow: 1;
-    }
-
-    .menu-text-container .text {
-        padding: 0;
-        font-size: 0.9rem;
-        line-height: 1.5rem;
-    }
-
-    .menu-text-container .menu-btn {
-        align-self: flex-start;
-        margin-top: 15px;
-        padding: 8px 20px;
-        font-size: 0.9rem;
+    .menu-list {
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .reservation-section .section-wrapper .reservation,
     .reservation-section .section-wrapper .information {
         width: 100%;
-        height: auto;    /* 中のテキスト左寄せ */
+        height: auto;
     }
  
     .reservation-section .section-wrapper {
@@ -756,7 +695,11 @@ footer .social-icon .fa-facebook:hover,
 
     .reservation-section .section-wrapper .reservation {
         max-width: 1000px;  
-        text-align: left;    /* 中身は左寄せ */
+        text-align: left; 
+    }
+
+    .information {
+        padding-top: 50px;
     }
 
     footer .header-logo .copyright {
