@@ -567,6 +567,8 @@ footer .social-icon .fa-facebook:hover,
 
     :root {
         --font-size-s:0.5rem;
+        --font-size-l:1.2rem;
+        --font-size-xl:3rem;
     }
         body.show-mobile-menu header::before{
         content: "";
@@ -650,7 +652,7 @@ footer .social-icon .fa-facebook:hover,
         z-index: 0;
     }
     .hero-section .hero-details .subtitle {
-        font-size: var(--font-size-m);
+        font-size: var(--font-size-l);
     }
 
     .hero-section .hero-details .title {
