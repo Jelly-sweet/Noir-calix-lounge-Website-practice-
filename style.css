@@ -78,6 +78,7 @@ textarea {
 #Concept,
 #Menu {
     min-height: 100vh;
+    background-color: var(--primary-color);
 }
 
 /* header styling */
@@ -178,7 +179,6 @@ header {
     color: var(--white-color);
     padding: 80px 0px;
     margin: 50px auto;
-    background-color: rgb(138, 114, 118);
     width: 100%;
 
     display: flex;
@@ -230,7 +230,7 @@ header {
 /* menu styling */
 
 .Menu-section {
-    padding: 0 50px;
+    padding: 250px 50px;
     margin-bottom: 50px;
 }
 
@@ -284,9 +284,15 @@ header {
   padding: 15px 50px;
   border-radius: 50px;
   background: var(--light-blue-color);
+  transition: all 0.3s ease;
 }
 
+.menu-btn:hover{
+    color: var(--dark-color);
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
 
+}
 
 
 /* reservation section styling */
@@ -568,7 +574,8 @@ footer .social-icon .fa-facebook:hover,
     :root {
         --font-size-s:0.5rem;
         --font-size-l:1.2rem;
-        --font-size-xl:3rem;
+        --font-size-xl:2rem;
+        --font-size-xxl:3rem;
     }
         body.show-mobile-menu header::before{
         content: "";
@@ -656,18 +663,18 @@ footer .social-icon .fa-facebook:hover,
     }
 
     .hero-section .hero-details .title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-xxl);
         margin: 0;
         white-space: nowrap;
     }
     .concept-section .concept-contents .title {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-xxl);
     
     }
 
     .concept-section .concept-explain {
         padding: 0;
-        width: 100%;
+        max-width: 100%;
     }
     .concept-section .concept-explain .concept-theme {
         font-size: var(--font-size-n);
@@ -680,10 +687,16 @@ footer .social-icon .fa-facebook:hover,
         padding-top: 20px;
     }
 
+    .Menu-section {
+        padding: 50px 20px;
+    }
     .menu-list {
         grid-template-columns: repeat(1, 1fr);
     }
 
+    .menu-text-container .name {
+        font-size: var(--font-size-xl);
+    }
     .reservation-section .section-wrapper .reservation,
     .reservation-section .section-wrapper .information {
         width: 100%;
